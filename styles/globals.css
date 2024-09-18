@@ -1,42 +1,148 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   html {
-    color-scheme: dark;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   }
+  :root {
+    --ck-border-radius: 10px;
+  }
+  .ck-content {
+    min-height: 650px !important;
+    min-width: 595px !important;
+  }
+}
+
+.superset iframe {
+  width: 100%;
+  height: 100vh;
+  border: 0px;
+  overflow: hidden;
+}
+
+.captcha-wrapper {
+  position: relative;
+  width: 250px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.captcha-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: invert(100%);
+  background: linear-gradient(135deg, #3b5998 0%, #68a1f1 50%, #3b5998 100%);
+  border-radius: 6px;
+}
+
+.page-container-a4 {
+  width: 210mm;
+  /* height: 297mm; */
+  margin-bottom: 15px;
+}
+.page-content-a4 {
+  padding-left: 20mm;
+  padding-right: 20mm;
+  font-size: 11pt;
+  line-height: 1.5;
+}
+
+.dataTables div table tbody tr {
+  cursor: pointer;
+}
+
+.dynamic-table-custom-margin div {
+  margin-bottom: 10px;
+}
+
+/* ************************************************************* */
+/* START custom component common */
+
+/* .inline-edit-orgeh-select form div div {
+  position: unset !important;
+} */
+
+/* END custom component common */
+/* ************************************************************* */
+
+/* START custom table atlaskit */
+.dataTables-custom div div div {
+  padding: 0;
+}
+
+.dataTables-custom div div div div {
+  padding: 0;
+}
+
+.cell-custom-dataTables {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.cell-custom-dataTables-padding-0 {
+  padding: 0px !important;
+}
+
+.cell-width-full-height-full .css-0 {
+  width: 100%;
+  height: 100%;
+}
+
+.header-width-full-height-full {
+  padding: 0 !important;
+}
+/* END Custom table atlaskit */
+
+/* START custom style EWP*/
+.dataTables-jadwal-audit-mapa-ewp div div div div {
+  padding: 0;
+}
+
+.cell-jadwal-audit-mapa-ewp {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.cell-jadwal-audit-mapa-ewp span {
+  width: 100%;
+}
+/* END Jadwal Audit MAPA EWP*/
+
+/* START Anggaran MAPA EWP*/
+.cell-anggaran-mapa-ewp span {
+  width: 100%;
+}
+/* END Anggaran MAPA EWP*/
+
+.progress-tracker-custom-create-project-consulting ul {
+  max-width: none !important;
+}
+
+.custom-table-header {
+  @apply w-full h-full flex items-center text-brisma;
+}
+
+.custom-table-position-center {
+  @apply w-full h-full flex items-center;
+}
+
+.navbar {
+  @apply font-semibold text-base flex justify-center pb-1;
+}
+
+.navbar-active {
+  @apply border-b-[5px] border-atlasian-blue-light text-atlasian-blue-light;
 }
