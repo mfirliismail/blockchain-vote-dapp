@@ -1,6 +1,6 @@
 // pages/_app.js
 // pages/_app.js
-import "@/styles/globals.css";
+// import "@/styles/globals.css";
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
